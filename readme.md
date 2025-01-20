@@ -1,14 +1,20 @@
 
 # Company Insight
 
-This project is a web application built using Gradio that provides current information about an organization and its domain of work, sourced from the web. The application allows users to input the name of an organization and its field/domain, and it fetches relevant news articles along with summaries to display useful insights.
+This project is a web application built using Gradio that provides current information about an organization and its work domain, sourced from the web. The application allows users to input the name of an organization and its field/domain, and it fetches relevant news articles along with summaries to display useful insights.
+
+## Demo
+
+See the live demo on Hugging Face Spaces:
+    https://huggingface.co/spaces/VinitSan/company_insight
+
 
 
 ## Deployment
 
 To set up this project locally, follow the steps below:
 
-- Clone the repository and install required dependencies
+- Clone the repository and install the required dependencies
 
 ```windows
 git clone https://github.com/VinitSama/company-insight.git
@@ -20,7 +26,7 @@ pip install -r requirements.txt
 
     You'll need an API key for the Serp API to perform Google searches. Follow these steps:
 
-    - Sign up on https://serpstack.com/ and get an API key.
+    - Sign up at https://serpstack.com/ and get an API key.
     - Store the key in an environment variable
 - Run the Application
 ```windows
@@ -41,7 +47,7 @@ python app.py
 - **Serp API**: For performing a Google search to find relevant news articles about the organisation and domain.
 - **Selenium**: Used to navigate and scrape content from web pages.
 - **BeautifulSoup**: For extracting useful text data from news articles.
-- **Scikit-learn (DBSCAN)**: Used for clustering similar news articles to group related information.
+- **Scikit-learn (DBSCAN)**: Used for clustering similar news articles to group-related information.
 - **Transformers (Hugging Face)**: For summarizing each cluster of news articles.
 
 ## Workflow
@@ -58,7 +64,7 @@ python app.py
     - A pair of useful text and the corresponding URL is created.
 5. **Clustering (using DBSCAN)**
     - DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is used to cluster similar news articles based on the extracted text content.
-    - Articles with similar themes are grouped together.
+    - Articles with similar themes are grouped.
 6. **Summarization (using Hugging Face Transformers)**
     - A transformer model is used to summarize each cluster of related articles, providing concise summaries for each group.
 7. **Displaying Results (via Gradio)**
